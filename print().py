@@ -1,0 +1,5 @@
+print("Hello World")
+print("This is an example\n\n\nTo see it prints")
+print("how is it going")
+print()
+print("yes")
