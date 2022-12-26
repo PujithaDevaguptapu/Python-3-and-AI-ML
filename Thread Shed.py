@@ -112,22 +112,22 @@ daily_sales_replaced = daily_sales.replace(";,;", "%")
 
 #Splitting the list
 daily_transactions = daily_sales_replaced.split(",")
-#print(daily_transactions)
+print(daily_transactions)
 
 #Futhur splitting list
 daily_transactions_split = []
 for transactions in daily_transactions:
   daily_transactions_split.append(transactions.split("%"))
-#print(daily_transactions_split)
+print(daily_transactions_split)
 
 #Cleaning whitespaces
 transactions_clean = []
 for clean in daily_transactions_split:
   list1 = []
   for stripping in clean:
-    list1.append(stripping.replace("\n", "").strip(" "))
+    list1.append(stripping.replace("\n", "").strip(" "))      # I was using wrong logic for this loop, so couldn't get the required result. finally got it.
   transactions_clean.append(list1)
-#print(transactions_clean)
+print(transactions_clean)
 
 #Collecting individual data points
 customers = []
@@ -139,18 +139,18 @@ for transaction in transactions_clean:
   customers.append(transaction[0])
   sales.append(transaction[1])
   thread_sold.append(transaction[2])
-#print(customers)
-#print(sales)
-#print(thread_sold)
+print(customers)
+print(sales)
+print(thread_sold)
 
 #Determining Daily sales
 total_sales = 0
 for sale in sales:
   total_sales += float(sale.strip("$"))
-#print(total_sales)
+print(total_sales)
 
 #Determining number of color threads sold daily
-#print(thread_sold)
+print(thread_sold)
 thread_sold_split = []
 for thread in thread_sold:
   for color in thread.split("&"):
@@ -163,7 +163,7 @@ def color_count(color):
     if color == threads:
       count_total += 1
   return count_total
-#print(color_count("white"))
+print(color_count("white"))
 
 #Thread Shed colors
 colors = ["red", "yellow", "green", "white", "black", "blue", "purple"]
