@@ -1,0 +1,5 @@
+n=int(input("Enter the number to be searched (1-10):"))
+a=[1, 2, 4, 3,5,7,9,8,6,10 ]
+for i in range(1,(len(a))):
+  if n==a[i]:
+   print("number found at",i+1)
